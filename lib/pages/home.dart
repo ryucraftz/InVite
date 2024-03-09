@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:invite/pages/details.dart';
 import 'package:invite/widget/widget_support.dart';
 
 class Home extends StatefulWidget {
@@ -11,6 +13,7 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   bool birthday = false, engagement = false, wedding = false, baby = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,55 +54,53 @@ class _HomeState extends State<Home> {
               ),
               SizedBox(height: 20.0),
               Container(margin: EdgeInsets.only(right: 20), child: showItem()),
-              SizedBox(
-                height: 30.0,
-              ),
+              SizedBox(height: 30.0),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   children: [
-                    Container(
-                      margin: EdgeInsets.all(4),
-                      child: Material(
-                        elevation: 5.0,
-                        borderRadius: BorderRadius.circular(20),
-                        child: Container(
-                          padding: EdgeInsets.all(14),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Image.asset(
-                                "images/birthday2.png",
-                                height: 150,
-                                width: 150,
-                                fit: BoxFit.cover,
-                              ),
-                              Text(
-                                "Mickey-Mini",
-                                style: AppWidget.semiBoldTextFieldStyle(),
-                              ),
-                              SizedBox(
-                                height: 5.0,
-                              ),
-                              Text(
-                                "Birthday Decoration",
-                                style: AppWidget.LightTextFieldStyle(),
-                              ),
-                              SizedBox(
-                                height: 5.0,
-                              ),
-                              Text(
-                                "\$25",
-                                style: AppWidget.semiBoldTextFieldStyle(),
-                              )
-                            ],
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context, MaterialPageRoute(builder: (context) => Details()));
+                      },
+                      child: Container(
+                        margin: EdgeInsets.all(4),
+                        child: Material(
+                          elevation: 5.0,
+                          borderRadius: BorderRadius.circular(20),
+                          child: Container(
+                            padding: EdgeInsets.all(14),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Image.asset(
+                                  "images/birthday2.png",
+                                  height: 150,
+                                  width: 150,
+                                  fit: BoxFit.cover,
+                                ),
+                                Text(
+                                  "Mickey-Mini",
+                                  style: AppWidget.semiBoldTextFieldStyle(),
+                                ),
+                                SizedBox(height: 5.0),
+                                Text(
+                                  "Birthday Decoration",
+                                  style: AppWidget.LightTextFieldStyle(),
+                                ),
+                                SizedBox(height: 5.0),
+                                Text(
+                                  "\$28",
+                                  style: AppWidget.semiBoldTextFieldStyle(),
+                                )
+                              ],
+                            ),
                           ),
                         ),
                       ),
                     ),
-                    SizedBox(
-                      width: 15.0,
-                    ),
+                    SizedBox(width: 15.0),
                     Container(
                       margin: EdgeInsets.all(4),
                       child: Material(
@@ -120,16 +121,12 @@ class _HomeState extends State<Home> {
                                 "Blue-themed",
                                 style: AppWidget.semiBoldTextFieldStyle(),
                               ),
-                              SizedBox(
-                                height: 5.0,
-                              ),
+                              SizedBox(height: 5.0),
                               Text(
                                 "Birthday Decoration",
                                 style: AppWidget.LightTextFieldStyle(),
                               ),
-                              SizedBox(
-                                height: 5.0,
-                              ),
+                              SizedBox(height: 5.0),
                               Text(
                                 "\$20",
                                 style: AppWidget.semiBoldTextFieldStyle(),
@@ -159,9 +156,7 @@ class _HomeState extends State<Home> {
                           width: 120,
                           fit: BoxFit.cover,
                         ),
-                        SizedBox(
-                          width: 20.0,
-                        ),
+                        SizedBox(width: 20.0),
                         Column(
                           children: [
                             Container(
@@ -171,7 +166,7 @@ class _HomeState extends State<Home> {
                                 style: AppWidget.semiBoldTextFieldStyle(),
                               ),
                             ),
-                            SizedBox(height: 5.0,),
+                            SizedBox(height: 5.0),
                             Container(
                               width: MediaQuery.of(context).size.width / 2,
                               child: Text(
@@ -179,7 +174,7 @@ class _HomeState extends State<Home> {
                                 style: AppWidget.LightTextFieldStyle(),
                               ),
                             ),
-                             SizedBox(height: 5.0,),
+                            SizedBox(height: 5.0),
                             Container(
                               width: MediaQuery.of(context).size.width / 2,
                               child: Text(
